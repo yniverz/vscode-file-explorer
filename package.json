@@ -1,0 +1,166 @@
+{
+  "name": "file-explorer",
+  "displayName": "Local File Explorer",
+  "description": "A simple extension that displays local files in a tree view in the Activity Bar.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "localFileViewer",
+          "title": "Local Explorer",
+          "icon": "resources/image/folder.svg"
+        }
+      ]
+    },
+    "views": {
+      "localFileViewer": [
+        {
+          "id": "localFileViewerView",
+          "name": "Folders"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Local File Explorer",
+      "properties": {
+        "localFileViewer.folders": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "An array of absolute folder paths to display in the local file explorer."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "localFileViewer.addFolder",
+        "title": "Add Folder",
+        "icon": {
+          "light": "resources/image/light/add.svg",
+          "dark": "resources/image/dark/add.svg"
+        }
+      },
+      {
+        "command": "localFileViewer.removeFolder",
+        "title": "Remove Folder",
+        "icon": {
+          "light": "resources/image/light/delete.png",
+          "dark": "resources/image/dark/delete.png"
+        }
+      },
+      {
+        "command": "localFileViewer.toggleShowHidden",
+        "title": "Toggle Hidden Files",
+        "icon": {
+          "light": "resources/image/light/link.svg",
+          "dark": "resources/image/dark/link.svg"
+        }
+      },
+      {
+        "command": "localFileViewer.revealInFinder",
+        "title": "Reveal in Finder"
+      },
+      {
+        "command": "localFileViewer.deleteFileOrFolder",
+        "title": "Delete"
+      },
+      {
+        "command": "localFileViewer.createFile",
+        "title": "New File"
+      },
+      {
+        "command": "localFileViewer.createFolder",
+        "title": "New Folder"
+      },
+      {
+        "command": "localFileViewer.renameFileOrFolder",
+        "title": "Rename"
+      },
+      {
+        "command": "localFileViewer.openSystemDefault",
+        "title": "Open (System Default)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "localFileViewer.addFolder",
+          "when": "view == localFileViewerView",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.toggleShowHidden",
+          "when": "view == localFileViewerView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "localFileViewer.removeFolder",
+          "when": "view == localFileViewerView && viewItem == rootFolder",
+          "group": "inline"
+        },
+        {
+          "command": "localFileViewer.revealInFinder",
+          "when": "view == localFileViewerView && (viewItem == folder || viewItem == rootFolder)",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.deleteFileOrFolder",
+          "when": "view == localFileViewerView && (viewItem == file || viewItem == folder || viewItem == rootFolder)",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.createFile",
+          "when": "view == localFileViewerView && (viewItem == folder || viewItem == rootFolder)",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.createFolder",
+          "when": "view == localFileViewerView && (viewItem == folder || viewItem == rootFolder)",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.renameFileOrFolder",
+          "when": "view == localFileViewerView && (viewItem == file || viewItem == folder || viewItem == rootFolder)",
+          "group": "navigation"
+        },
+        {
+          "command": "localFileViewer.openSystemDefault",
+          "when": "view == localFileViewerView && viewItem == file",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "postpack": "cp -r '../file_explorer/' '../extension' && zip -r '../file_explorer.vsix' '../extension' && rm -rf '../extension'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
