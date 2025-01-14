@@ -150,7 +150,7 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test",
-    "postpack": "cp -r '../vscode-file-explorer/' '../extension' && zip -r '../vscode-file-explorer.vsix' '../extension' && rm -rf '../extension'"
+    "postpack": "cp -r '../vscode-file-explorer/' '../extension' && zip -r '../vscode-file-explorer/vscode-file-explorer.vsix' '../extension' && rm -rf '../extension'"
   },
   "devDependencies": {
     "@types/vscode": "^1.96.0",
