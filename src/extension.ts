@@ -379,6 +379,37 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(openSystemDefaultCommand);
+
+
+
+  // Register the "Open Default" command
+  const openInVSCodeCommand = vscode.commands.registerCommand(
+    "localFileViewer.openInVSCode",
+    (item: FileTreeItem) => {
+      if (!item) {
+        return;
+      }
+
+      const filePath = item.filePath;
+
+      childProcess.exec(`code "${filePath}"`, handleExecError);
+
+      // // Cross-platform open in default app
+      // if (process.platform === "darwin") {
+      //   // macOS
+      //   childProcess.exec(`open "${filePath}"`, handleExecError);
+      // } else if (process.platform === "win32") {
+      //   // Windows
+      //   // Use "" for the title param to avoid issues with paths that have spaces
+      //   childProcess.exec(`start "" "${filePath}"`, handleExecError);
+      // } else {
+      //   // Linux / other
+      //   childProcess.exec(`xdg-open "${filePath}"`, handleExecError);
+      // }
+    }
+  );
+
+  context.subscriptions.push(openSystemDefaultCommand);
 }
 
 function handleExecError(error: any, stdout: string, stderr: string) {
