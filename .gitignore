@@ -1,6 +1,5 @@
 out
 node_modules
 .vscode-test/
-*.vsix
 *.bundle.js.LICENSE.txt
 .DS_Store
