@@ -15,8 +15,7 @@ A Visual Studio Code extension that displays local files in a tree view in the A
 - **Open in VS Code** – Quickly open a file or folder in a separate VS Code window.
 - **Toggle Hidden Files** – Show or hide dotfiles (e.g., `.gitignore`).
 
-<!-- Add screenshot: -->
-![preview](resources/screenshot1.png)
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/resources/screenshot1.jpg?raw=true)
 
 ## Installation
 
@@ -31,7 +30,7 @@ A Visual Studio Code extension that displays local files in a tree view in the A
 
 The extension provides a Button in the top right corner of the explorer to add or remove folders.
 
-![preview](resources/screenshot2.png)
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/resources/screenshot1.jpg?raw=true)
 
 - **Show Hidden Files**: Toggle via the command `localFileViewer.toggleShowHidden`, or via the Tree View Title Bar menu (the little link icon).
 
