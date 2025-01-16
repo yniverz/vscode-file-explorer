@@ -30,7 +30,7 @@ A Visual Studio Code extension that displays local files in a tree view in the A
 
 The extension provides a Button in the top right corner of the explorer to add or remove folders.
 
-![preview](screenshot1.jpg)
+![preview](screenshot2.jpg)
 
 - **Show Hidden Files**: Toggle via the command `localFileViewer.toggleShowHidden`, or via the Tree View Title Bar menu (the little link icon).
 
