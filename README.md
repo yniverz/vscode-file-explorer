@@ -13,6 +13,8 @@ A Visual Studio Code extension that displays local files in a tree view in the A
 - **Reveal in Finder** (macOS) – Opens the selected item in macOS Finder.
 - **Open in Default App** – Cross-platform support to open files in their system default application.
 - **Open in VS Code** – Quickly open a file or folder in a separate VS Code window.
+To use this feature, you must have the `code` command installed and available in your system PATH.
+![preview](screenshot3.png)
 - **Toggle Hidden Files** – Show or hide dotfiles (e.g., `.gitignore`).
 
 ## Installation
