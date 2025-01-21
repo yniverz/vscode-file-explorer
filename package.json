@@ -121,7 +121,7 @@
         },
         {
           "command": "localFileViewer.deleteFileOrFolder",
-          "when": "view == localFileViewerView && (viewItem == file || viewItem == folder || viewItem == rootFolder)",
+          "when": "view == localFileViewerView && (viewItem == file || viewItem == folder)",
           "group": "navigation"
         },
         {
