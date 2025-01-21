@@ -86,6 +86,14 @@ export function activate(context: vscode.ExtensionContext) {
 
         // Add the new folder path, if not already present
         if (!folders.includes(selectedPath)) {
+          // Check if the selected folder is a subfolder of any existing folder
+          const isSubfolder = folders.some((folder: string) => selectedPath.startsWith(folder + path.sep));
+
+          if (isSubfolder) {
+            vscode.window.showWarningMessage("The selected folder is a subfolder of an already added folder.");
+            return;
+          }
+          
           folders.push(selectedPath);
 
           // Update global user settings (true => user settings)
