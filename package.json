@@ -17,7 +17,7 @@
         {
           "id": "localFileViewer",
           "title": "Local Explorer",
-          "icon": "resources/image/folder.svg"
+          "icon": "resources/image/folder-border.svg"
         }
       ]
     },
