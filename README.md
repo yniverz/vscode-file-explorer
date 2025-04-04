@@ -23,8 +23,8 @@ To use this feature, you must have the `code` command installed and available in
 
 ## Installation
 
-1. **Download / Clone** – Get this repository or its `.vsix` package.
-2. **Install via VSIX** (optional if not installing from the Marketplace):
+1. **Download ** – Get the latest `.vsix` package from the releases.
+2. **Install via VSIX**:
    1. Open VS Code
    2. Press `F1` or `Ctrl + Shift + P` and type: `Extensions: Install from VSIX...`
    3. Select the `.vsix` file and install.
