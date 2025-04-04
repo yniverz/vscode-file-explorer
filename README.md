@@ -1,3 +1,5 @@
+[![License: NCPUL](https://img.shields.io/badge/license-NCPUL-blue.svg)](./LICENSE.md)
+
 # Simple File Explorer
 
 A Visual Studio Code extension that displays local files in a tree view in the Activity Bar. This extension allows you to configure multiple folders, navigate their contents, and perform common file operations—all without leaving VS Code.
@@ -34,8 +36,7 @@ The extension provides a Button in the top right corner of the explorer to add o
 
 ![preview](https://github.com/user-attachments/assets/e5b0e2ea-26ef-4579-bd66-2cbaff248c2e)
 
-
-- **Show Hidden Files**: Toggle via the command `localFileViewer.toggleShowHidden`, or via the Tree View Title Bar menu (the little link icon).
+- **Show Hidden Files**: Toggle via the Tree View Title Bar menu (the little link icon).
 
 ## Known Issues / Limitations
 
