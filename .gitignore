@@ -3,3 +3,4 @@ node_modules
 .vscode-test/
 *.bundle.js.LICENSE.txt
 .DS_Store
+*.vsix
